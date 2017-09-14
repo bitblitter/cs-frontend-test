@@ -21,7 +21,7 @@ well as the adopted solutions, the use of design patterns or best practices will
 
 To implement this test you will need to use the iTunes Search API
 
-[https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/]
+https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/
 
 Here you will find a lot of documentation in addition to the necessary, so you can go directly to the sub-section called "Search Examples", and
 verify that you only need to use a call like “https://itunes.apple.com/search?term=michael+jackson” for a search of the legendary Michael Jackson
