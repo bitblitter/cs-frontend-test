@@ -46,7 +46,6 @@ var iTunesSearch = function(userConfig){
     };
     var apiClient = iTunesSearchAPIClient(apiConfig);
 
-    var $searchButton, $searchInput;
     var $mainElement = document.querySelector(config.container);
     var mainElementTemplate = config.templateType($mainElement.innerHTML);
     var resultTemplate = config.templateType(document.querySelector(config.resultTemplate).innerHTML);
