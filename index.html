@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frontend Test - Carles Codony</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/5.0.0/sanitize.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/its-search-app.css">
+</head>
+<body>
+<div class="main-layout" id="itunes-search">
+    <div class="its-app init-hidden {{appClass}}">
+        <div class="fixed-header">
+            <div class="layout-container header">
+                <div class="layout-row">
+                    <div class="layout-column">
+                        <h1>iTunes Search App</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="layout-container search-bar">
+                <div class="layout-row">
+                    <div class="layout-column">
+                        <div class="its-bar">
+                            <div class="its-form">
+                                <input type="text"
+                                       name="term"
+                                       class="its-input search term"
+                                       value="{{searchTerm}}"
+                                       data-its-search-input
+                                       placeholder="Search for an artist, album or song"
+                                       autofocus
+                                       id="search-input"
+                                >
+                                <button type="button"
+                                        data-its-search-button="#search-input"
+                                        class="its-input search button">
+                                    Search
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="its-detail-container init-hidden {{detailClass}}"
+             data-its-call="hideDetail"
+             data-its-call-args=""
+        >
+            <div class="its-detail-wrapper" data-its-detail>
+            </div>
+        </div>
+        <div class="layout-container layout-content-container">
+            <div class="layout-row">
+                <div class="layout-column">
+                    <div class="its-results" data-its-results>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script language="text/html" id="itunes-search-result-template">
+    <div class="its-result">
+        <div class="its-result-media">
+            <img src="{{artworkUrl100}}" alt="{{collectionName}}">
+        </div>
+        <div class="its-result-data">
+            <span>{{_index}} of {{_length}}</span>
+            <h3><span class="its-link detail"
+                      data-its-call="showDetail"
+                      data-its-call-args="{{_index}}">{{trackName}}</span></h3>
+            <small class="its-link term"
+                   data-its-call="search"
+                   data-its-call-args="{{collectionName}}">{{collectionName}}</small>
+            <p><span class="its-link term"
+                     data-its-call="search"
+                     data-its-call-args="{{artistName}}">{{artistName}}</span></p>
+        </div>
+    </div>
+</script>
+<script language="text/html" id="itunes-search-detail-template">
+    <div class="its-detail">
+        <div class="its-detail-media">
+            <img src="{{artworkUrl100}}">
+        </div>
+        <div class="its-detail-data">
+            <div class="detail-info">
+                <h3>{{trackName}}</h3>
+                Album: {{collectionName}} <br>
+                Artist: {{artistName}} <br>
+                Genre: {{primaryGenreName}}
+            </div>
+            <div class="detail-player">
+                <audio controls preload="metadata" style="width: 100%;">
+                    <source src="{{previewUrl}}">
+                </audio>
+            </div>
+        </div>
+    </div>
+</script>
+<script src="js/polyfill.js"></script>
+<script src="js/request.js"></script>
+<script src="js/itunes-search-api-client.js"></script>
+<script src="js/itunes-search.js"></script>
+<script>
+    var testApp = iTunesSearch({
+        searchTerm: 'land of confusion'
+    });
+</script>
+</body>
+</html>

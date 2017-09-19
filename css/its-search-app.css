@@ -1,0 +1,158 @@
+.init-hidden {
+    display: none;
+}
+
+.init-hidden.on {
+    display: inherit;
+}
+
+.its-app.init-hidden {
+    display: none;
+}
+
+.its-app.init-hidden.app-visible {
+    display: block;
+}
+
+.its-main {
+
+}
+
+.its-bar {
+    padding: 5px;
+}
+
+.its-form {
+    display: flex;
+    flex-direction: row;
+}
+
+.its-input {
+    padding: 15px;
+    flex: 1;
+    transition: all .2s ease-in-out;
+}
+
+.its-input.term {
+    border: #F0F0F0 1px solid;
+    box-shadow: none;
+}
+
+.its-input.button {
+    flex: 0;
+    width: auto;
+    border: none;
+    background: #F0F0F0;
+    color: #444;
+    border-radius: 5px;
+}
+
+.its-input.button:hover {
+    background: #D0D0D0;
+    color: white;
+}
+
+.its-input.button:active {
+    background: #C0C0C0;
+}
+
+.its-input:focus {
+    outline-width: 0px;
+    border-color: #D0D0D0;
+}
+
+.its-input.search.term {
+    border-right: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background: white;
+}
+
+.its-input.search.term::placeholder {
+    color: #D0D0D0;
+}
+
+.its-input.search.button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-weight: 100;
+}
+
+
+.its-results {
+    padding: 10px;
+}
+
+.its-result {
+    border-bottom: #F0F0F0 1px solid;
+    padding: 10px;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    background: white;
+    transition: all 0.2s ease-in-out;
+}
+
+.its-link:hover {
+    text-decoration: underline;
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+.its-result:hover {
+    background-color: #F0F0F0;
+}
+
+.its-result-media {
+    flex: 0;
+}
+
+.its-result-data {
+    flex: 1;
+    padding: 10px;
+}
+
+.its-result-field {
+
+}
+
+.its-detail-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.its-detail-container.on {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.its-detail-wrapper {
+    background: white;
+    padding: 20px;
+    width: 50%;
+    min-width: 600px;
+}
+
+.its-detail {
+    display: flex;
+}
+
+.its-detail-media {
+    flex: 0;
+}
+
+.its-detail-data {
+    flex: 1;
+    padding: 0px 0px 0px 20px;
+}
+
+.detail-player {
+    width: 100%;
+}

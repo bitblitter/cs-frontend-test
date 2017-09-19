@@ -1,0 +1,53 @@
+h1, h2, h3, h4, h5 {
+    margin: 0;
+}
+
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    font-size: 1rem;
+    background: white;
+    height: 100vh;
+}
+
+.fixed-header {
+    flex: 1;
+}
+
+.layout-container {
+}
+
+.layout-content-container {
+    flex: 1;
+}
+
+.layout-row {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+.layout-column {
+}
+
+.search-bar {
+    background: white;
+    padding: 5px 0;
+    box-shadow: rgba(0,0,0,0.1) 0 3px 5px;
+}
+
+.header {
+    background: white;
+    text-align: center;
+    padding: 1rem;
+    color: #444;
+}
+
+.header h1 {
+    margin: 0;
+    color: #666;
+    font-weight: 100;
+}
+
+
