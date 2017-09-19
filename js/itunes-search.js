@@ -101,10 +101,13 @@ var iTunesSearch = function(userConfig){
     function renderResults(element, resultCount, results){
         var resultNodes = [];
         for(var i = 0; i < results.length; i++){
+            var resultClass = (i === state.detailIndex ? 'active' : 'inactive');
             resultNodes.push(resultTemplate(Object.assign({}, results[i], {
                 _index: i,
                 _length: results.length,
-                _count: resultCount
+                _count: resultCount,
+                resultClass: resultClass,
+                _detailIndex: state.detailIndex
             })));
         }
         element.innerHTML = resultNodes.join("\n");
@@ -139,6 +142,26 @@ var iTunesSearch = function(userConfig){
         setState({ detailIndex: null , detailClass: 'off'});
     }
 
+    function showNext() {
+        var newIndex;
+        if(state.detailIndex === null){
+            newIndex = 0;
+        } else {
+            newIndex = (state.detailIndex + 1) % state.results.length;
+        }
+        showDetail(newIndex);
+    }
+
+    function showPrev() {
+        var newIndex;
+        if(state.detailIndex === null){
+            newIndex = state.results.length - 1;
+        } else {
+            newIndex = ((state.detailIndex - 1) + state.results.length)%state.results.length;
+        }
+        showDetail(newIndex);
+    }
+
 
     setTimeout(function(){
         search(config.searchTerm);
@@ -147,7 +170,9 @@ var iTunesSearch = function(userConfig){
     var publicAPI = {
         search: search,
         showDetail: showDetail,
-        hideDetail: hideDetail
+        hideDetail: hideDetail,
+        showNext: showNext,
+        showPrev: showPrev
     };
 
     initEvents();

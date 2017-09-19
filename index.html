@@ -63,9 +63,13 @@
     </div>
 </div>
 <script language="text/html" id="itunes-search-result-template">
-    <div class="its-result">
+    <div class="its-result {{resultClass}}">
         <div class="its-result-media">
-            <img src="{{artworkUrl100}}" alt="{{collectionName}}">
+            <img src="{{artworkUrl100}}"
+                 alt="{{collectionName}}"
+                 data-its-call="showDetail"
+                 data-its-call-args="{{_index}}"
+            >
         </div>
         <div class="its-result-data">
             <span>{{_index}} of {{_length}}</span>
@@ -83,6 +87,12 @@
 </script>
 <script language="text/html" id="itunes-search-detail-template">
     <div class="its-detail">
+        <span class="its-link close"
+              data-its-call="hideDetail"
+              data-its-call-args=""
+        >
+            close
+        </span>
         <div class="its-detail-media">
             <img src="{{artworkUrl100}}">
         </div>
@@ -97,6 +107,20 @@
                 <audio controls preload="metadata" style="width: 100%;">
                     <source src="{{previewUrl}}">
                 </audio>
+            </div>
+            <div class="detail-nav">
+                <span class="its-link button"
+                      data-its-call="showPrev"
+                      data-its-call-args=""
+                >
+                    Prev
+                </span>
+                <span class="its-link button"
+                      data-its-call="showNext"
+                      data-its-call-args=""
+                >
+                    Next
+                </span>
             </div>
         </div>
     </div>

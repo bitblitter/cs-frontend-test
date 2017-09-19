@@ -93,6 +93,11 @@
     transition: all 0.2s ease-in-out;
 }
 
+.its-result.active {
+    border-color: dodgerblue;
+    color: dodgerblue;
+}
+
 .its-link:hover {
     text-decoration: underline;
     color: dodgerblue;
@@ -142,6 +147,13 @@
 
 .its-detail {
     display: flex;
+    position: relative;
+}
+
+.its-detail .close {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .its-detail-media {
@@ -155,4 +167,16 @@
 
 .detail-player {
     width: 100%;
+}
+
+.detail-nav {
+    display: flex;
+    margin-top: 6px;
+}
+
+.detail-nav .its-link.button {
+    flex: 1;
+    padding: 5px;
+    margin-left: 2px;
+    color: dodgerblue;
 }
